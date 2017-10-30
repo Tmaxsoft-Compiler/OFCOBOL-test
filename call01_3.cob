@@ -1,0 +1,46 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID.    CALL03.
+       ENVIRONMENT DIVISION.
+       DATA DIVISION.
+       WORKING-STORAGE SECTION.
+       01 A PIC X(8).
+       01 B PIC X(8).
+       01 C PIC X(8).
+       01 FUNC-NAME PIC X(20).
+
+       PROCEDURE DIVISION.
+       DISPLAY "== CALL TEST : BY VALUE(2) ==".
+
+       MOVE "ADD-TWO" TO FUNC-NAME.
+       MOVE "12345678" TO A.
+       MOVE "12345678" TO B.
+       MOVE "12345678" TO C.
+       CALL FUNC-NAME USING BY REFERENCE A B C.
+      * CALL "ADD-TWO" USING BY REFERENCE A B C.
+       DISPLAY "** MAIN **"
+       DISPLAY "A : " A.
+       DISPLAY "B : " B.
+       DISPLAY "C : " C.
+
+       EXIT PROGRAM.
+       END PROGRAM "CALL03".
+
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. ADD-TWO.
+       ENVIRONMENT DIVISION.
+       DATA DIVISION.
+       LINKAGE SECTION.
+       01 PA PIC X(7).
+       01 PB PIC X(1).
+       01 PC PIC X(7).
+       PROCEDURE DIVISION USING BY REFERENCE PA PB PC.
+      * PROCEDURE DIVISION USING BY VALUE PA PB PC.
+       DISPLAY "** SUB **"
+       DISPLAY "A : " PA.
+       DISPLAY "B : " PB.
+       DISPLAY "C : " PC.
+       MOVE "A" TO PA.
+       MOVE "B" TO PB.
+       MOVE "C" TO PC.
+
+       END PROGRAM "ADD-TWO".

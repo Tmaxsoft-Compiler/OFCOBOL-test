@@ -1,0 +1,16 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. init4.
+
+       DATA DIVISION.
+       WORKING-STORAGE SECTION.
+       01 GR.
+         02 ARRAY_VAL OCCURS 10.
+           03 ELEM PIC 9(4) VALUE 4321.
+
+       PROCEDURE DIVISION.
+       DISPLAY "[" ARRAY_VAL(3) "]".
+       INITIALIZE GR
+       REPLACING NUMERIC DATA BY 123
+                       ALPHANUMERIC DATA BY "ABCDF".
+       DISPLAY "[" ARRAY_VAL(3) "]".
+
