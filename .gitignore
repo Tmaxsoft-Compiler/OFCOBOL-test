@@ -1,0 +1,9 @@
+# ignore all
+*
+
+# unignore *.cob
+!*.cob
+
+!README.md
+!.gitignore
+
