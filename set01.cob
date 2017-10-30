@@ -1,0 +1,16 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. set1.
+
+       DATA DIVISION.
+       WORKING-STORAGE SECTION.
+       01 GR1.
+         02 ARRAY_VAL OCCURS 4 TIMES INDEXED BY IDX-1.
+           03 VAL_K PIC 9(4).
+       PROCEDURE DIVISION.
+       MOVE 1 TO VAL_K(1).
+       MOVE 2 TO VAL_K(2).
+       MOVE 3 TO VAL_K(3).
+       MOVE 4 TO VAL_K(4).
+
+       SET IDX-1 TO 3. 
+       DISPLAY 'SET' VAL_K( IDX-1 ).

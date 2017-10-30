@@ -1,0 +1,12 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. initialize0.
+
+       DATA DIVISION.
+       WORKING-STORAGE SECTION.
+       01 VAR-1 PIC 999.
+       PROCEDURE DIVISION.
+       MOVE 123 TO VAR-1.
+       DISPLAY "ZONEDEC[" VAR-1 "]".
+       INITIALIZE VAR-1.
+       DISPLAY "ZONEDEC[" VAR-1 "]".
+

@@ -1,0 +1,21 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. stringwithexception.
+
+       DATA DIVISION.
+       WORKING-STORAGE SECTION.
+       01 SUBSTR1 PIC X(10).
+       01 SUBSTR2 PIC X(10).
+       01 CONCAT  PIC X(20).
+       01 CONCAT-SHORT  PIC X(15).
+
+       PROCEDURE DIVISION.
+       MOVE "abcdefghij" TO SUBSTR1.
+       MOVE "xxxxxxxxxx" TO SUBSTR2.
+
+       STRING SUBSTR1 SUBSTR2 
+       DELIMITED "*" INTO CONCAT
+       NOT ON OVERFLOW DISPLAY "NOT OVERFLOW".
+
+       DISPLAY "STRING1:"CONCAT.
+
+

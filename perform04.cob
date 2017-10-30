@@ -1,0 +1,20 @@
+       ID DIVISION.
+       PROGRAM-ID. perform4as.
+
+       DATA DIVISION.
+       WORKING-STORAGE SECTION.
+       01 IND_VAR PIC 9(1) USAGE COMP-5.
+       01 TMP_VAR PIC 9(1) USAGE COMP-5.
+
+       PROCEDURE DIVISION.
+       BEGIN.
+
+       MOVE 2 TO TMP_VAR.
+       PERFORM WITH TEST AFTER
+       VARYING  IND_VAR FROM 1 BY 2 UNTIL IND_VAR >= 9
+       ADD 2 TO TMP_VAR 
+       END-PERFORM.
+       
+       DISPLAY "PERFORM04 : " TMP_VAR.
+       GOBACK.
+
